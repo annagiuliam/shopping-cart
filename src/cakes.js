@@ -9,7 +9,7 @@ import roundWhite from './images/round-cake-white.jpg';
 
 import uniqid from 'uniqid';
 
-const cakes = [
+const cakesArr = [
     {
         id: uniqid(),
         name : "Cloud Cake",
@@ -68,4 +68,4 @@ const cakes = [
     },
 ]
 
-export default cakes;
+export default cakesArr;

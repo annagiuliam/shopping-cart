@@ -1,20 +1,23 @@
 
 
-import cakes from '../cakes';
+
 import CakeCard from './CakeCard'
 
-function Shop() {
-  console.log(cakes)
+function Shop(props) {
+  const {cakes} = props
   return (
     <div className="cakes-container">      
       
         {cakes.map(cake => {
           return (
             <CakeCard  
-            src={cake.src}
+            /* src={cake.src}
             name={cake.name}
-            price={cake.price}
+            price={cake.price} */
+            cake={cake}
             key={cake.id}
+            onClick={props.onClick}
+            onChange={props.onChange}
             />
           )
         })}
