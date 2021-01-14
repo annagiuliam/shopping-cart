@@ -1,36 +1,49 @@
-.App {
+body, html , #root {
+  height: 100%;
+  margin: 0 
+} 
+img {
+  height : 200px;
+  width: 200px
+}
+input {
+  width: 40px;
+} 
+h1 {
+  margin: 0;
+
+}
+
+/* Home */
+.home-container {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   
 }
 
-body::after {
+.home-container::after {
   content: "";
-  background: url("./images/background-cake.jpg");
+  background-image: url("./images/background-cake.jpg");
   background-size: cover;
   background-repeat: no-repeat; 
-  opacity: 0.2;
+  opacity: 0.5;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: -1;
-}
-
-img {
-  height : 200px;
-  width: 200px
-}
-
-input {
-  width: 40px;
-}
-
-
-body, html {
-  height: 100%;
-  margin: 0
+  z-index: -1;  
 }
  
+
+/* Header */ 
 nav {
   display: flex;
   justify-content: space-between;
@@ -47,11 +60,6 @@ nav {
   justify-content: space-around;
   align-items: center;
   list-style: none;
-}
-
-.home-container {
-  text-align: center;
-  margin-top: 100px;
 }
 
 .white-link {
