@@ -12,50 +12,70 @@ const App = () => {
     const [cakes, setCakes] = useState(cakesArr);
     const [cart, setCart] = useState([]);
     const [count, setCount] = useState(1);
-    const [quantity, setQuantity] = useState(0);
+    const [cartQty, setCartQty] = useState(0);
 
     useEffect(()=> {
         console.log(cart)
         console.log(count)
-        console.log(quantity)
-    }, [cakes, cart, count, quantity]);
+       // console.log(cartQty)
+        function cartTotal() {
+            const total = cart.reduce((tot, curr) => tot += curr.count, 0);
+            console.log(total)
+            setCartQty(total);
+        }
+        cartTotal();
+    }, [cakes, cart, count, cartQty]);
     
-    function addToCart(cake) {
-       const cartItem = cart.find(item => item.id === cake.id)
-       cartItem ? changeQuantity(cartItem) : addNewCake(cake)  
+    function addToCart(cake, qty) {
+        //console.log(count)
+       const cartItem = cart.find(item => item.id === cake.id);
+       cartItem ? changecartQty(cartItem, qty) : addNewCake(cake, qty) ; 
+       //setCount(1)
         
     }
 
-    function addNewCake(cake) {
-        console.log(cake)
+    function addNewCake(cake, qty) {
         const newCake = {...cake};
-        newCake.count += count;
-        console.log(newCake);
+        newCake.count += qty;
         const newCart = [...cart, newCake];
         setCart(newCart)
+        
     }
 
-    function changeQuantity(item) {
+    function changecartQty(item, qty) {
+        //console.log(count)
       const newCart = cart.map(ele => {
           if (ele.id === item.id) {
-             ele.count += count;
+              
+             ele.count += qty;
           }
           return ele; 
       })
       setCart(newCart);
+     
     }
 
-    function handleChange(e) {
+    /* function cartTotal() {
+        const total = cart.reduce((tot, curr) => tot += curr.count, 0);
+        console.log(total)
+        setCartQty(total);
+    } */
+
+    /* function handleChange(e) {
        const qty = parseInt(e.target.value)
        setCount(qty);
-    }
+    } */
 
     function handleSubmit(e, cake) {
         e.preventDefault();
-        addToCart(cake);
-        
+       const qty = parseInt(e.target.firstChild.value);
+       //console.log(e.target.firstChild.value)
+       setCount(qty);
+       console.log(qty)
+       // console.log(count);
+        addToCart(cake, qty);
     }
-    
+
     return (
         <BrowserRouter>
             <Header />
@@ -66,8 +86,9 @@ const App = () => {
                             <Shop {...props} 
                             cakes={cakes}
                             //onClick={addToCart}
-                            onChange={handleChange}
-                            onSubmit={handleSubmit}/>
+                            /* onChange={handleChange} */
+                            onSubmit={handleSubmit}
+                            count={count}/>
                         )} />
             </Switch>
         </BrowserRouter>

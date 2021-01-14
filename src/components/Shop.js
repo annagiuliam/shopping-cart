@@ -17,8 +17,9 @@ function Shop(props) {
             cake={cake}
             key={cake.id}
             //onClick={props.onClick}
-            onChange={props.onChange}
+            /* onChange={props.onChange} */
             onSubmit={props.onSubmit}
+            count={props.count}
             />
           )
         })}
