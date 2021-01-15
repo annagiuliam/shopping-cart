@@ -1,7 +1,11 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
-function Header() {
+import Cart from './Cart'
+
+
+
+function Header(props) {
     
     return (
         <header>
@@ -14,7 +18,10 @@ function Header() {
                         <li>Shop</li>
                     </Link>
                 </ul>
-            <div>Cart</div>
+            {<Cart 
+            cartQty={props.cartQty}
+            totalPrice={props.totalPrice}
+            />}
         </nav>
         </header>
         

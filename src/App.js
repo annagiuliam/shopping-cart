@@ -8,22 +8,29 @@ import Home from './components/Home'
 import Shop from './components/Shop'
 
 
+import { sumCartQty, sumTotalPrice} from './assets/helper'
+
+
 const App = () => {
     const [cakes, setCakes] = useState(cakesArr);
     const [cart, setCart] = useState([]);
     const [count, setCount] = useState(1);
     const [cartQty, setCartQty] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(()=> {
         console.log(cart)
         console.log(count)
        // console.log(cartQty)
-        function cartTotal() {
+        /* function sumCartQty() {
             const total = cart.reduce((tot, curr) => tot += curr.count, 0);
             console.log(total)
             setCartQty(total);
-        }
-        cartTotal();
+        } */
+
+        
+        sumCartQty(cart, setCartQty);
+        sumTotalPrice(cart, setTotalPrice);
     }, [cakes, cart, count, cartQty]);
     
     function addToCart(cake, qty) {
@@ -55,7 +62,7 @@ const App = () => {
      
     }
 
-    /* function cartTotal() {
+    /* function sumCartQty() {
         const total = cart.reduce((tot, curr) => tot += curr.count, 0);
         console.log(total)
         setCartQty(total);
@@ -78,7 +85,11 @@ const App = () => {
 
     return (
         <BrowserRouter>
-            <Header />
+            <Header 
+            cartQty={cartQty}
+            totalPrice={totalPrice}
+            />
+                    
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route path='/shop' 
@@ -88,8 +99,10 @@ const App = () => {
                             //onClick={addToCart}
                             /* onChange={handleChange} */
                             onSubmit={handleSubmit}
-                            count={count}/>
-                        )} />
+                            count={count}
+                            />
+                        )} 
+                        />
             </Switch>
         </BrowserRouter>
     )

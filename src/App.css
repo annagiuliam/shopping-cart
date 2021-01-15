@@ -65,6 +65,43 @@ nav {
 .white-link {
   color : white;
 }
+
+/*Cart*/
+
+#cart-div {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: baseline;
+}
+
+#cart-icon {
+ 
+}
+
+.cart-info {
+  margin: 10px;
+  font-size: 24px;
+}
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+
+#cart-count {
+    font-size: 18px;
+    background: #34314a;
+    color: #fff;
+    padding: 3 8px;
+    vertical-align: top;
+    margin-left: -10px; 
+}
 /* Shop */
 .cakes-container {
   text-align: center;
