@@ -6,7 +6,7 @@ import Cart from './Cart'
 
 
 function Header(props) {
-    
+   console.log(props) 
     return (
         <header>
             <nav >
@@ -18,9 +18,10 @@ function Header(props) {
                         <li>Shop</li>
                     </Link>
                 </ul>
-            {<Cart 
+            {props.showCart && <Cart 
             cartQty={props.cartQty}
             totalPrice={props.totalPrice}
+            
             />}
         </nav>
         </header>

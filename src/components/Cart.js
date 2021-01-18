@@ -11,9 +11,6 @@ const Cart = (props) => {
                     <FontAwesomeIcon icon={faShoppingCart} size= "2x" id="cart-icon"/>
                     <span class='badge' id='cart-count'>{props.cartQty}</span>
                 </div>
-               {/*  <div className="cart-info">
-                    ({props.cartQty})
-                </div> */}
                 <div className="cart-info">
                 {Number(props.totalPrice).toFixed(2)} $
                 </div>

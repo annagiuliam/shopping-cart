@@ -73,11 +73,27 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content:space-between;
-  align-items: baseline;
+  align-items: center;
 }
 
+/* .icon-div {
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.icon-div:hover {
+  background-color: white;
+  cursor: pointer;
+} */
+
 #cart-icon {
- 
+  padding: 10px;
+  border-radius: 25px;
+}
+#cart-icon:hover {
+  background-color: white;
+  color: #34314a;
+ cursor: pointer;
 }
 
 .cart-info {

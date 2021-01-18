@@ -17,21 +17,19 @@ const App = () => {
     const [count, setCount] = useState(1);
     const [cartQty, setCartQty] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [showCart, setShowCart] = useState(false);
 
     useEffect(()=> {
         console.log(cart)
         console.log(count)
-       // console.log(cartQty)
-        /* function sumCartQty() {
-            const total = cart.reduce((tot, curr) => tot += curr.count, 0);
-            console.log(total)
-            setCartQty(total);
-        } */
-
         
         sumCartQty(cart, setCartQty);
         sumTotalPrice(cart, setTotalPrice);
     }, [cakes, cart, count, cartQty]);
+
+    function displayCart() {
+        setShowCart(true)
+    }
     
     function addToCart(cake, qty) {
         //console.log(count)
@@ -61,8 +59,12 @@ const App = () => {
       setCart(newCart);
      
     }
+    function checkPath(match) {
+        console.log(match)
+        match.path === '/shop' ? setShowCart(true) : setShowCart(false);
 
-    /* function sumCartQty() {
+        }
+            /* function sumCartQty() {
         const total = cart.reduce((tot, curr) => tot += curr.count, 0);
         console.log(total)
         setCartQty(total);
@@ -83,15 +85,23 @@ const App = () => {
         addToCart(cake, qty);
     }
 
+    
+
     return (
         <BrowserRouter>
             <Header 
             cartQty={cartQty}
             totalPrice={totalPrice}
+            showCart={showCart}
             />
                     
             <Switch>
-                <Route exact path='/' component={Home} />
+                <Route exact path='/' render={(props) => (
+                    <Home {...props}
+                        displayCart={displayCart}
+                        checkPath={checkPath}
+                        />
+                )} />
                 <Route path='/shop' 
                         render={(props) => (
                             <Shop {...props} 
@@ -100,6 +110,7 @@ const App = () => {
                             /* onChange={handleChange} */
                             onSubmit={handleSubmit}
                             count={count}
+                            checkPath={checkPath}
                             />
                         )} 
                         />

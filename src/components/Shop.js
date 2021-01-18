@@ -3,8 +3,11 @@
 
 import CakeCard from './CakeCard'
 
-function Shop(props) {
+const Shop = (props) => {
+ 
   const {cakes} = props
+
+ props.checkPath(props.match)
   return (
     <div className="cakes-container">      
       
