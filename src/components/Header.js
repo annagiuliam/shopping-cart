@@ -19,8 +19,9 @@ function Header(props) {
                     </Link>
                 </ul>
             {props.showCart && <Cart 
-            cartQty={props.cartQty}
-            totalPrice={props.totalPrice}
+                                cartQty={props.cartQty}
+                                totalPrice={props.totalPrice}
+                                displayCheckout={props.displayCheckout}
             
             />}
         </nav>

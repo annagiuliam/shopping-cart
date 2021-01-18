@@ -2,10 +2,11 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import  {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
-import cakesArr from '../src/cakes'
+import cakesArr from '../src/cakes';
 import Header from './components/Header';
-import Home from './components/Home'
-import Shop from './components/Shop'
+import Home from './components/Home';
+import Shop from './components/Shop';
+import Checkout from './components/Checkout';
 
 
 import { sumCartQty, sumTotalPrice} from './assets/helper'
@@ -18,7 +19,7 @@ const App = () => {
     const [cartQty, setCartQty] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
     const [showCart, setShowCart] = useState(false);
-
+    
     useEffect(()=> {
         console.log(cart)
         console.log(count)
@@ -61,9 +62,10 @@ const App = () => {
     }
     function checkPath(match) {
         console.log(match)
-        match.path === '/shop' ? setShowCart(true) : setShowCart(false);
+        match.path !== '/' ? setShowCart(true) : setShowCart(false);
 
-        }
+    }
+     
             /* function sumCartQty() {
         const total = cart.reduce((tot, curr) => tot += curr.count, 0);
         console.log(total)
@@ -88,14 +90,16 @@ const App = () => {
     
 
     return (
+        
         <BrowserRouter>
             <Header 
             cartQty={cartQty}
             totalPrice={totalPrice}
             showCart={showCart}
+            
             />
                     
-            <Switch>
+            <Switch >
                 <Route exact path='/' render={(props) => (
                     <Home {...props}
                         displayCart={displayCart}
@@ -114,8 +118,17 @@ const App = () => {
                             />
                         )} 
                         />
+                <Route path='/checkout'
+                        render={(props) => (
+                            <Checkout {...props}
+                            cart={cart} 
+                            />
+                        )}
+                    />           
             </Switch>
+           
         </BrowserRouter>
+        
     )
 }
 

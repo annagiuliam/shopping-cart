@@ -5,11 +5,11 @@ import CakeCard from './CakeCard'
 
 const Shop = (props) => {
  
-  const {cakes} = props
+  const {cakes} = props;
+  props.checkPath(props.match);
 
- props.checkPath(props.match)
   return (
-    <div className="cakes-container">      
+    <div className="cakes-container">  
       
         {cakes.map(cake => {
           return (

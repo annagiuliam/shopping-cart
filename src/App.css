@@ -89,6 +89,7 @@ nav {
 #cart-icon {
   padding: 10px;
   border-radius: 25px;
+  color: white;
 }
 #cart-icon:hover {
   background-color: white;
@@ -138,4 +139,38 @@ nav {
   width: 300px;
   background-color: #dbd8e6;
   border-radius: 15px
+}
+
+
+/* Checkout */
+.item-container {
+  display: grid;
+  grid-template-columns : repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+  "image description price quantity total"
+}
+
+.img-container {
+  grid-area: image;
+}
+
+.item-description {
+  grid-area: description;
+}
+
+.item-price {
+  grid-area: price;
+}
+.item-qty {
+  grid-area: quantity;
+}
+
+.item-total {
+  grid-area: total;
+}
+
+.checkout-img {
+  height: 100px;
+  width: 100px;
 }
