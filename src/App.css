@@ -60,10 +60,12 @@ nav {
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  font-size: 24px;
 }
 
 .white-link {
   color : white;
+  text-decoration: none;
 }
 
 /*Cart*/
@@ -76,15 +78,6 @@ nav {
   align-items: center;
 }
 
-/* .icon-div {
-  padding: 10px;
-  border-radius: 50px;
-}
-
-.icon-div:hover {
-  background-color: white;
-  cursor: pointer;
-} */
 
 #cart-icon {
   padding: 10px;
@@ -110,7 +103,6 @@ nav {
   border-radius: 9px;
 }
 
-
 #cart-count {
     font-size: 18px;
     background: #34314a;
@@ -119,6 +111,7 @@ nav {
     vertical-align: top;
     margin-left: -10px; 
 }
+
 /* Shop */
 .cakes-container {
   text-align: center;
@@ -130,6 +123,7 @@ nav {
   flex-wrap:wrap;
   background-color: white;
 }
+
 /* CakeCard */
 
 .cake-wrapper {
@@ -148,9 +142,12 @@ nav {
 
 /* Checkout Items */
 .checkout-container {
-  padding-top: 200px;
-  padding-left: 150px;
   font-size: 18px;
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .item-container {
   display: grid;
@@ -159,34 +156,12 @@ nav {
   justify-items: center;
   align-items: center;
   margin-bottom: 15px;
-  
-  /* grid-template-areas:
-  "image description price quantity total" */
 }
 
 .table-header {
   font-weight: bold;
 }
 
-/* .img-container {
-  grid-area: image;
-}
-
-.item-description {
-  grid-area: description;
-}
-
-.item-price {
-  grid-area: price;
-}
-.item-qty {
-  grid-area: quantity;
-}
-
-.item-total {
-  grid-area: total;
-}
- */
 .checkout-img {
   height: 100px;
   width: 100px;
@@ -199,7 +174,7 @@ nav {
 
 .order-total {
   text-align: center;
-  margin-left: 100px;
+  margin-left: 200px;
   font-size: 20px;
   font-weight: bold;
 

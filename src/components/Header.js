@@ -3,8 +3,6 @@ import {Link} from 'react-router-dom';
 
 import Cart from './Cart'
 
-
-
 function Header(props) {
 
     return (
@@ -24,7 +22,7 @@ function Header(props) {
                                 displayCheckout={props.displayCheckout}
             
             />}
-        </nav>
+            </nav>
         </header>
         
     )

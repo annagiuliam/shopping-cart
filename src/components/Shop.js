@@ -1,6 +1,4 @@
 
-
-
 import CakeCard from './CakeCard'
 
 const Shop = (props) => {
@@ -9,24 +7,17 @@ const Shop = (props) => {
   props.checkPath(props.match);
 
   return (
-    <div className="cakes-container">  
-      
+    <div className='cakes-container'>        
         {cakes.map(cake => {
           return (
             <CakeCard  
-            /* src={cake.src}
-            name={cake.name}
-            price={cake.price} */
-            cake={cake}
-            key={cake.id}
-            //onClick={props.onClick}
-            /* onChange={props.onChange} */
-            onSubmit={props.onSubmit}
-            count={props.count}
+              cake={cake}
+              key={cake.id}
+              onSubmit={props.onSubmit}
+              count={props.count}
             />
           )
-        })}
-    
+        })}    
     </div>
   );
 }

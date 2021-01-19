@@ -9,11 +9,11 @@ const Checkout = (props) => {
     const items = <CheckoutItems 
                             cart={cart}
                             deleteItem={props.deleteItem}
-                            totalPrice={props.totalPrice}/>
+                            totalPrice={props.totalPrice}
+                    />
 
     return (
-        <div>{ cart.length === 0 ? emptyCart : items } </div>  
-        
+        <div>{ cart.length === 0 ? emptyCart : items } </div>      
         
     )
 }
