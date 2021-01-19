@@ -21,8 +21,8 @@ const App = () => {
     const [showCart, setShowCart] = useState(false);
     
     useEffect(()=> {
-        console.log(cart)
-        console.log(count)
+        //console.log(cart)
+       // console.log(count)
         
         sumCartQty(cart, setCartQty);
         sumTotalPrice(cart, setTotalPrice);
@@ -61,7 +61,6 @@ const App = () => {
      
     }
     function checkPath(match) {
-        console.log(match)
         match.path !== '/' ? setShowCart(true) : setShowCart(false);
 
     }
@@ -82,9 +81,16 @@ const App = () => {
        const qty = parseInt(e.target.firstChild.value);
        //console.log(e.target.firstChild.value)
        setCount(qty);
-       console.log(qty)
        // console.log(count);
         addToCart(cake, qty);
+    }
+
+    function deleteItem(item) {
+        console.log(cart)
+        const newCart = cart.filter(cake => cake.id !== item.id);
+        
+        setCart(newCart);
+        console.log(cart)
     }
 
     
@@ -122,6 +128,8 @@ const App = () => {
                         render={(props) => (
                             <Checkout {...props}
                             cart={cart} 
+                            deleteItem={deleteItem}
+                            totalPrice={totalPrice}
                             />
                         )}
                     />           
