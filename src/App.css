@@ -151,7 +151,7 @@ nav {
 }
 .item-container {
   display: grid;
-  grid-template-columns : 150px repeat(5, 100px);
+  grid-template-columns : 150px repeat(5, 150px);
   grid-template-rows: auto;
   justify-items: center;
   align-items: center;
@@ -170,6 +170,7 @@ nav {
 .delete-btn {
   width: 25px;
   height: 25px;
+  text-align: center;
 }
 
 .order-total {
