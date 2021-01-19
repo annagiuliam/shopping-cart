@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import  {BrowserRouter, Switch, Route} from 'react-router-dom';
+import  {HashRouter, Switch, Route} from 'react-router-dom';
 
 import './App.css';
 import cakesArr from '../src/cakes';
@@ -70,7 +70,7 @@ const App = () => {
 
     return (
         
-        <BrowserRouter>
+        <HashRouter basename='/'>
             <Header 
             cartQty={cartQty}
             totalPrice={totalPrice}
@@ -104,7 +104,7 @@ const App = () => {
                         )}
                     />           
             </Switch>
-        </BrowserRouter> 
+        </HashRouter> 
     )
 }
 
