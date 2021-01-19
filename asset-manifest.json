@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.1ca76001.chunk.css",
+    "main.js": "/shopping-cart/static/js/main.7badec72.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.7badec72.chunk.js.map",
+    "runtime-main.js": "/shopping-cart/static/js/runtime-main.b56c1ee8.js",
+    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.b56c1ee8.js.map",
+    "static/js/2.e8122784.chunk.js": "/shopping-cart/static/js/2.e8122784.chunk.js",
+    "static/js/2.e8122784.chunk.js.map": "/shopping-cart/static/js/2.e8122784.chunk.js.map",
+    "index.html": "/shopping-cart/index.html",
+    "static/css/main.1ca76001.chunk.css.map": "/shopping-cart/static/css/main.1ca76001.chunk.css.map",
+    "static/js/2.e8122784.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.e8122784.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/shopping-cart/static/media/background-cake.328bb6bb.jpg",
+    "static/media/cloud-cake.64ec9f6c.jpg": "/shopping-cart/static/media/cloud-cake.64ec9f6c.jpg",
+    "static/media/cubes-cake-orchid.bfdb7686.jpg": "/shopping-cart/static/media/cubes-cake-orchid.bfdb7686.jpg",
+    "static/media/cubes-cake-unicorn.2beb2b30.jpg": "/shopping-cart/static/media/cubes-cake-unicorn.2beb2b30.jpg",
+    "static/media/cubes-cake-yellow.dea80a9d.jpg": "/shopping-cart/static/media/cubes-cake-yellow.dea80a9d.jpg",
+    "static/media/round-cake-bordeaux.c44eef76.jpg": "/shopping-cart/static/media/round-cake-bordeaux.c44eef76.jpg",
+    "static/media/round-cake-bubbles.7a47c5b2.jpg": "/shopping-cart/static/media/round-cake-bubbles.7a47c5b2.jpg",
+    "static/media/round-cake-figs.9b682bbe.jpg": "/shopping-cart/static/media/round-cake-figs.9b682bbe.jpg",
+    "static/media/round-cake-white.b566acd4.jpg": "/shopping-cart/static/media/round-cake-white.b566acd4.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b56c1ee8.js",
+    "static/js/2.e8122784.chunk.js",
+    "static/css/main.1ca76001.chunk.css",
+    "static/js/main.7badec72.chunk.js"
+  ]
+}
