@@ -1,25 +1,25 @@
 
-import CakeCard from './CakeCard'
+import CakeCard from './CakeCard';
+import {useContext} from 'react';
+import { ShopContext } from '../context/ShopContext';
 
 const Shop = (props) => {
+ const {cakes, checkPath} = useContext(ShopContext);
  
-  const {cakes} = props;
-  props.checkPath(props.match);
+  checkPath(props.match) // fix warning
 
   return (
-    <div className='cakes-container'>        
+     <div className='cakes-container'>        
         {cakes.map(cake => {
           return (
-            <CakeCard  
+              <CakeCard  
               cake={cake}
               key={cake.id}
-              onSubmit={props.onSubmit}
-              count={props.count}
-            />
+            />  
           )
         })}    
-    </div>
-  );
+    </div> 
+  )
 }
 
 export default Shop;

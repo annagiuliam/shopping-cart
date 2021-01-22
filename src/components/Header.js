@@ -1,10 +1,12 @@
 import React from 'react';
+import {useContext} from 'react';
 import {Link} from 'react-router-dom';
 
+import {ShopContext} from '../context/ShopContext';
 import Cart from './Cart'
 
-function Header(props) {
-
+function Header() {
+const {showCart} = useContext(ShopContext);
     return (
         <header>
             <nav >
@@ -16,12 +18,7 @@ function Header(props) {
                         <li>Shop</li>
                     </Link>
                 </ul>
-            {props.showCart && <Cart 
-                                cartQty={props.cartQty}
-                                totalPrice={props.totalPrice}
-                                displayCheckout={props.displayCheckout}
-            
-            />}
+            {showCart && <Cart />}
             </nav>
         </header>
         
