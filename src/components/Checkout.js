@@ -4,7 +4,7 @@ import { ShopContext } from '../context/ShopContext';
 import CheckoutOverview from './CheckoutOverview'
 
 
-const Checkout = (props) => {
+const Checkout = () => {
    const {cart} = useContext(ShopContext)
     
     const emptyCart = <h1 className='empty-cart'>The cart is empty</h1> ;    

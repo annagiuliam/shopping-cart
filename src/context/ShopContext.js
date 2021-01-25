@@ -11,7 +11,6 @@ export const ContextProvider = ({children}) => {
     const [count, setCount] = useState(1);
     const [cartQty, setCartQty] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
-    const [showCart, setShowCart] = useState(false);
 
     useEffect(()=> {  
 
@@ -40,15 +39,12 @@ export const ContextProvider = ({children}) => {
         setCart(newCart);        
     }
 
-    function displayCart() {
-        setShowCart(true)
-    }
     function handleSubmit(e, cake) {
             e.preventDefault();
             const qty = parseInt(e.target.firstChild.value);
             setCount(qty);
             addToCart(cake, qty);       
-        }
+    }
 
     function changecartQty(item, qty) {
         const newCart = cart.map(ele => {
@@ -60,20 +56,13 @@ export const ContextProvider = ({children}) => {
         setCart(newCart);
       }
   
-      function checkPath(match) {
-          match.path !== '/' ? setShowCart(true) : setShowCart(false);
-      }
 
       function deleteItem(item) {
         const newCart = cart.filter(cake => cake.id !== item.id);
         setCart(newCart);
     } 
     return(
-        <ShopContext.Provider value={{showCart, checkPath, displayCart, cartQty, totalPrice,
-        setCount, addToCart, cakes, cart, 
-        handleSubmit,
-         setTotalPrice,  
-         setShowCart,   deleteItem}}>
+        <ShopContext.Provider value={{cartQty, totalPrice, cakes, cart, handleSubmit, deleteItem}}>
             {children}
         </ShopContext.Provider>
     )

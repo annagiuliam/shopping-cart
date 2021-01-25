@@ -5,10 +5,9 @@ import {useContext} from 'react';
 import { ShopContext } from '../context/ShopContext';
 
 
-const Home = (props) => {
-    const {checkPath, displayCart} = useContext(ShopContext);
-    checkPath(props.match);
-    
+const Home = () => {
+    const {displayCart} = useContext(ShopContext);
+        
     return (
         <div className='home-container' >
             <div className='home-text'>

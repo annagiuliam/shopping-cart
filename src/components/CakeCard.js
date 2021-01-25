@@ -6,12 +6,6 @@ const CakeCard = (props) => {
     const {cake} = props
     const {handleSubmit}  = useContext(ShopContext);
 
-    // function handleSubmit(e, cake) {
-    //     e.preventDefault();
-    //     const qty = parseInt(e.target.firstChild.value);
-    //     setCount(qty);
-    //     addToCart(cake, qty);       
-    // }
 
     return(
         <div className='cake-wrapper'>

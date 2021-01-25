@@ -57,15 +57,17 @@ nav {
 .nav-links {
   width : 20%;
   display : flex;
-  justify-content: space-around;
+  justify-content: left;
   align-items: center;
   list-style: none;
   font-size: 24px;
+  
 }
 
 .white-link {
   color : white;
   text-decoration: none;
+  margin-right: 15px;
 }
 
 /*Cart*/

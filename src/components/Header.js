@@ -1,12 +1,9 @@
 import React from 'react';
-import {useContext} from 'react';
 import {Link} from 'react-router-dom';
 
-import {ShopContext} from '../context/ShopContext';
 import Cart from './Cart'
 
-function Header() {
-const {showCart} = useContext(ShopContext);
+function Header(props) {
     return (
         <header>
             <nav >
@@ -18,7 +15,7 @@ const {showCart} = useContext(ShopContext);
                         <li>Shop</li>
                     </Link>
                 </ul>
-            {showCart && <Cart />}
+            {(props.match.path === '/' && props.match.isExact === false) && <Cart />}
             </nav>
         </header>
         

@@ -7,16 +7,15 @@ import TableRow from './CheckoutTableRow';
 
 
 
-const CheckoutOverview = (props) => {
+const CheckoutOverview = () => {
     const {cart, totalPrice} = useContext(ShopContext);
     
  return (
     <div className='checkout-container'>
         <TableHeader />
         {cart.map(item => {
-            return (
-                <TableRow item={item} key={item.id}/>
-            )
+            return <TableRow item={item} key={item.id}/>
+            
         })}
         <div className='order-total'>Order Total: {Number(totalPrice).toFixed(2)} $</div>
     </div>
